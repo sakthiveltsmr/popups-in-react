@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h2>Retainful Popups</h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Cart and Activity</a>
+            </li>
+            <li>
+                <a href="#">Automation</a>
+            </li>
+            <li>
+                <a href="#">Popups</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section className="hero">
+       <div className="info">
+           <h2>We are Retainful</h2>
+           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, impedit! Ea incidunt amet quam nostrum numquam cum magnam! Dolore quis laborum cum neque rerum vero eveniet laudantium excepturi nemo alias?</p>
+       </div>
+       <div className="cta">
+            <h3>Find out more about what we do...</h3>
+            <button>Learn More</button>
+       </div>
+    </section>
+     
     </div>
   );
 }
