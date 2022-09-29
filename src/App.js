@@ -1,8 +1,12 @@
 // import logo from './logo.svg';
+// import { useState } from 'react';
 import './App.css';
+import useStore from './store';
 
+import Popup from "./modelpopup"
 function App() {
-  return (
+  const popup = useStore((state) => state.Exit);
+    return (
     <div className="App">
      <h2>Retainful Popups</h2>
     <nav>
@@ -28,6 +32,7 @@ function App() {
             <h3>Find out more about what we do...</h3>
             <button>Learn More</button>
        </div>
+      { popup && <Popup />}
     </section>
      
     </div>

@@ -1,8 +1,11 @@
 
 import './style.css';
+import useStore from '../store';
+const Model=({setpopup})=>{
+  const setpops=useStore((state)=>state.setExit)
 
+  
 
-const Model=({setpops})=>{
  return( 
  <form className="popup">
     <button className="close" onClick={()=>setpops(false)}>X</button>

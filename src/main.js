@@ -1,7 +1,9 @@
-import { useState } from "react";
-import Popup from "./modelpopup"
+import useStore from "./store";
+
 export const Main = () => {
-    const[pops,setpops]=useState(false)
+    // const[pops,setpops]=useState(false)
+    const setpops=useStore((state)=>state.setExit)
+   
   
     const cookieStorage = {
         getItem: (item) => {
@@ -23,24 +25,20 @@ export const Main = () => {
     
  
 
-        window.onmouseout = (event) => {
-              if(event.screenY<150){
-                const value=shouldShowPopup()
-                if(value){
-                    saveToStorage(storageType);
-                    setpops(true)
-                //    alert("wellcome to retainfull")
+
+     window.onmouseout = (event) => {
+        console.log("haii")
+         if(event.screenY<150){
+             const value=shouldShowPopup()
+             if(value){
+                setpops(true)
+                 saveToStorage(storageType);
+                 
+                }
                 }
             }
     }
     
    
-    return(
-        <form>
-            {
-                pops && <Popup setpops={setpops}/>
-            }
-        
-        </form>
-    )
-}
+   
+
