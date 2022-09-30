@@ -27,7 +27,7 @@ export const Main = () => {
 
 
      window.onmouseout = (event) => {
-        console.log("haii")
+
          if(event.screenY<150){
              const value=shouldShowPopup()
              if(value){
