@@ -1,13 +1,16 @@
 
 import './App.css';
 import useStore from './store';
-import {Exitpopup} from "./utils"
+import {Exitpopup,Entrypopup} from "./utils"
 import Model  from "./modelpopup"
+import ModelEntry from './modelpopup/Entry';
 function App() {
 
    Exitpopup()
+   Entrypopup()
 
    const pops=useStore((state)=>state.Exit)
+   const Entry=useStore((state)=>state.Entry)
    
     return (
     <div className="App">
@@ -39,6 +42,9 @@ function App() {
         {pops && 
          <Model /> 
         } 
+        {
+            Entry && <ModelEntry />
+        }
         </div>    
     </section>
      

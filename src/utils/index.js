@@ -1,5 +1,18 @@
 import useStore from "../store"
 
+const cookieStorage = {
+    getItem: (item) => {
+        const cookies = document.cookie
+            .split(';')
+            .map(cookie => cookie.split('='))
+            .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {});
+        return cookies[item];
+    },
+    setItem: (item, value) => {
+        document.cookie = `${item}=${value};max-age=60`
+    }
+}
+
 export function getMountnode(){
 
 
@@ -22,19 +35,6 @@ export  function Exitpopup(){
 
     const setPopups=useStore((state)=>state.setExit)
 
-      const cookieStorage = {
-          getItem: (item) => {
-              const cookies = document.cookie
-                  .split(';')
-                  .map(cookie => cookie.split('='))
-                  .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {});
-              return cookies[item];
-          },
-          setItem: (item, value) => {
-              document.cookie = `${item}=${value};max-age=60`
-          }
-      }
-      
       const storageType = cookieStorage;
       const consentPropertyName = 'pops';
       const shouldShowPopup = () => !storageType.getItem(consentPropertyName);
@@ -53,6 +53,25 @@ export  function Exitpopup(){
               }
 }
    
+export  function Entrypopup(){
+    
+    const setPopups=useStore((state)=>state.setEntry)
+   
+       window.addEventListener("mouseenter",(event) => {
+               event.preventDefault()
+               alert("haii")
+               const value= !cookieStorage.getItem('entry')
+               console.log(value)
+              
+               if(value){
+                
+                setPopups(true)
+                document.cookie=`entry=ok;expires=60`
+                   
+                  }
+    })
+              
+}
 
  
     

@@ -5,7 +5,7 @@ body {
 
 
 .hero {
-    background:linear-gradient(360deg, rgb(245, 195, 101), rgb(238, 204, 179));
+    background:rgb(245, 195, 101);
         /* // background-size: cover; */
         object-fit: cover;
         position: relative;

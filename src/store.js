@@ -5,9 +5,14 @@ import create from "zustand";
 
 const useStore = create((set) => ({
   Exit:false,
+  Entry:false,
   
   setExit: (data) => {
     set({ Exit: data });
+  },
+  setEntry:(data)=>{
+    set({ Entry:data}  
+    )
   }
   
 }));
