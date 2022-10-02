@@ -38,7 +38,7 @@ export  function Exitpopup(){
       const storageType = cookieStorage;
       const consentPropertyName = 'pops';
       const shouldShowPopup = () => !storageType.getItem(consentPropertyName);
-      const saveToStorage = () => storageType.setItem(consentPropertyName, true,10);
+      const saveToStorage = () => storageType.setItem(consentPropertyName, true,60);
   
        window.onmouseout = (event) => {
         event.preventDefault()

@@ -22,7 +22,7 @@ function App() {
     return (
 
    <div className='main'>
-<BrowserRouter>
+   <BrowserRouter>
 <Routes>
     <Route path="/" element={<Home/>}/>
 <Route path='/automation' element={<Automation/>}/>
