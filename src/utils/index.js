@@ -8,8 +8,8 @@ const cookieStorage = {
             .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {});
         return cookies[item];
     },
-    setItem: (item, value) => {
-        document.cookie = `${item}=${value};max-age=60`
+    setItem: (item, value,day) => {
+        document.cookie = `${item}=${value};max-age=${day}`
     }
 }
 
@@ -26,7 +26,7 @@ export function getMountnode(){
        MOUNT_NODE=document.getElementById(elemetID)
     
     }
-
+    
     return MOUNT_NODE
 }
 
@@ -38,7 +38,7 @@ export  function Exitpopup(){
       const storageType = cookieStorage;
       const consentPropertyName = 'pops';
       const shouldShowPopup = () => !storageType.getItem(consentPropertyName);
-      const saveToStorage = () => storageType.setItem(consentPropertyName, true);
+      const saveToStorage = () => storageType.setItem(consentPropertyName, true,10);
   
        window.onmouseout = (event) => {
         event.preventDefault()
@@ -61,7 +61,7 @@ export  function Entrypopup(){
                event.preventDefault()
                const exitname="entry";
                const value= !cookieStorage.getItem(exitname)
-               const saveToStorage = () => cookieStorage.setItem(exitname, true);
+               const saveToStorage = () => cookieStorage.setItem(exitname,true)
                if(value){
                 setPopups(true)
                    saveToStorage()

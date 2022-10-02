@@ -1,14 +1,22 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+   
 }
 
+.main{
+    position: relative;
+    height: 900px;
+    overflow: hidden;
+    display: flex;
+    /* padding: 2rem 6rem; */
+   
+}
 
 .hero {
     background:rgb(245, 195, 101);
         /* // background-size: cover; */
         object-fit: cover;
-        position: relative;
         background-position: 0  -200px ;
         height: 900px;
         overflow: hidden;
