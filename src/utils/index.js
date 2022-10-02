@@ -57,19 +57,18 @@ export  function Entrypopup(){
     
     const setPopups=useStore((state)=>state.setEntry)
    
-       window.addEventListener("mouseenter",(event) => {
+       document.onmouseenter=(event) => {
                event.preventDefault()
-               alert("haii")
                const value= !cookieStorage.getItem('entry')
                console.log(value)
               
                if(value){
                 
                 setPopups(true)
-                document.cookie=`entry=ok;expires=60`
+                document.cookie=`entry=ok;`
                    
                   }
-    })
+    }
               
 }
 
