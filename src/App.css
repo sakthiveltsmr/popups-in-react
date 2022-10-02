@@ -8,6 +8,7 @@ body {
     background:linear-gradient(360deg, rgb(245, 195, 101), rgb(238, 204, 179));
         /* // background-size: cover; */
         object-fit: cover;
+        position: relative;
         background-position: 0  -200px ;
         height: 900px;
         overflow: hidden;
@@ -91,3 +92,12 @@ header {
 #consent-popup:hidden {
     opacity: 0;
 }
+.popups{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+    height: 100vh;
+}
+

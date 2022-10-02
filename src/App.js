@@ -1,11 +1,14 @@
-// import logo from './logo.svg';
-// import { useState } from 'react';
+
 import './App.css';
 import useStore from './store';
-
-import Popup from "./modelpopup"
+import {Exitpopup} from "./utils"
+import Model  from "./modelpopup"
 function App() {
-  const popup = useStore((state) => state.Exit);
+
+   Exitpopup()
+
+   const pops=useStore((state)=>state.Exit)
+   
     return (
     <div className="App">
      <h2>Retainful Popups</h2>
@@ -32,7 +35,11 @@ function App() {
             <h3>Find out more about what we do...</h3>
             <button>Learn More</button>
        </div>
-      { popup && <Popup />}
+       <div className='popups'>
+        {pops && 
+         <Model /> 
+        } 
+        </div>    
     </section>
      
     </div>
