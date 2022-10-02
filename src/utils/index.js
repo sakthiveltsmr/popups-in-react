@@ -59,13 +59,12 @@ export  function Entrypopup(){
    
        document.onmouseenter=(event) => {
                event.preventDefault()
-               const value= !cookieStorage.getItem('entry')
-               console.log(value)
-              
+               const exitname="entry";
+               const value= !cookieStorage.getItem(exitname)
+               const saveToStorage = () => cookieStorage.setItem(exitname, true);
                if(value){
-                
                 setPopups(true)
-                document.cookie=`entry=ok;`
+                   saveToStorage()
                    
                   }
     }
